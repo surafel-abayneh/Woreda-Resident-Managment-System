@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID Info Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+
+        body{
+            background: rgba(230, 228, 228, 0.5);
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 20px rgb(22 33 39 / 60%);
+        }
+        .form-container h1 {
+            margin-bottom: 20px;
+        }
+        .form-container ul {
+            list-style: none;
+            padding: 0;
+        }
+        .form-container li {
+            margin-bottom: 10px;
+        }
+        .btn-cancel {
+            background-color: #dc3545;
+            color: white;
+        }
+        img{
+            width:120px;
+            height:120px;
+        }
+         h3 {
+            margin_top:-10px;
+            text-decoration: none;
+            font-family:Montserrat;
+            color: #e05a00;
+        }
+       .section4R {
+            display:flex;
+            padding: 60px 40px 0px 40px;
+            justify-content:space-around;
+            align-items: stretch;
+            background: rgb(241, 247, 247);
+        }
+        .section4R #dev1{
+            background-color:#ffffff;
+            float:left;
+            width: 1000px;
+            min-height: 100px;
+            
+            border-radius: 25px; 
+            box-shadow: 0 20px 20px rgb(22 33 39 / 80%);
+            padding: 250px -10px 200px 0px;
+            margin-left: -8%;
+            margin: 0px 0px 0px 0px;
+            background-image: url({% static '../static/IMG/Id card.webp' %});
+        
+            background-position: cover;
+            background-repeat:no-repeat;
+            background-size:  100% 30%  ;
+          }
+          
+    </style>
+</head>
+
+<body> 
+   
+    <div class="section4R">
+         <h3>ID INFORMATION</h3>
+        <div id="dev1">
+           
+            <ul>
+            <li>
+                <strong>Photograph:</strong> {% if IDCard.House_No.PI_ID.photograph %}
+                <img src="{{ IDCard.House_No.PI_ID.photograph.url }}" alt="photograph" class="img-thumbnail">{% else %} No Photo {% endif %}
+            </li>
+            <li><strong>First Name:</strong> {{IDCard.House_No.PI_ID.F_Name }}</li>
+            <li><strong>Middle Name:</strong> {{ IDCard.House_No.PI_ID.M_Name }}</li>
+            <li><strong>Last Name:</strong> {{ IDCard.House_No.PI_ID.L_Name }}</li>
+            <li><strong>Sex:</strong> {{ IDCard.House_No.PI_ID.sex }}</li>
+            <li><strong>Date of Birth:</strong> {{ IDCard.House_No.PI_ID.Dob }}</li>
+            <li><strong>Place of Birth:</strong> {{ personal_info.Place_of_birth }}</li>
+            <li><strong>Nationality:</strong> {{ IDCard.House_No.PI_ID.Nationality }}</li>
+            <li><strong>Date of Registration:</strong> {{ IDCard.House_No.PI_ID.Date_of_registration }}</li>
+            <li><strong>Phone Number:</strong> {{ IDCard.House_No.PI_ID.Phone_number }}</li>
+           </ul>
+          <a href="{% url 'id_list' %}" class="btn btn-cancel">Back</a>
+        </div> 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

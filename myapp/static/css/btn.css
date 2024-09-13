@@ -1,0 +1,53 @@
+body{
+
+    background:  linear-gradient(rgba(17, 17, 17, 0.5), rgba(117, 113, 113, 0.5));
+
+
+}
+
+
+
+table{
+    box-shadow: 0 20px 20px rgb(22 33 39 / 50%);
+}
+
+
+.Ubtn {
+    background-color: #16c9ba;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 20px 20px rgb(22 33 39 / 50%);
+}
+.Dbtn {
+    background-color: #c51212;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 20px 20px rgb(22 33 39 / 50%);
+}
+.Ubtn:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.Dbtn:hover {
+    background-color: #080404;
+    color: #ffffff;
+}
+.mbtn{
+    background-color: #0cbaa9;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 20px 20px rgb(22 33 39 / 50%); 
+}

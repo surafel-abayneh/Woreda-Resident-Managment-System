@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Info List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/btn.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('tr[data-href]').on("click", function() {
+            window.location.href = $(this).attr('data-href');
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+     
+        <h1>Personal Information</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>PI_ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Sex</th>
+                    <th>Date of Birth</th>
+                    <th>Place of Birth</th>
+                    <th>Nationality</th>
+                    <th>Phone Number</th>
+                    <th>Date of Registration</th>
+                    <th>Photograph</th>
+                    <th>Detail</th>
+                    <th>Update</th> 
+                    <th>Delete</th>   <!-- New column for update and delete buttons -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in personal_info %}
+                <!-- personal_info_list.html -->
+               
+                 <tr data-href="{% if person.pk %}{% url 'personal_info_detail' person.pk %}{% else %}#{% endif %}">
+                    <td>{{ person.PI_ID }}</td>
+                    <td>{{ person.F_Name }}</td>
+                    <td>{{ person.M_Name }}</td>
+                    <td>{{ person.L_Name }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td>{{ person.Dob }}</td>
+                    <td>{{ person.Place_of_birth }}</td>
+                    <td>{{ person.Nationality }}</td>
+                    <td>{{ person.Phone_number }}</td>
+                    <td>{{ person.Date_of_registration }}</td>  
+                    <td>
+                        {% if person.photograph %}
+                         <img src="{{ person.photograph.url }}" alt="photograph">
+                         {% else %}
+                          No Photo
+                          {% endif %}
+                    </td>
+      
+                   <td>
+                    {% if person.pk %}<a href="{% url 'personal_info_detail' person.pk %}"><button class="mbtn">Detail</button></a>
+        
+                      {% else %}No Details{% endif %}
+                   </td> 
+                    
+                  <td>
+                        <!-- Update Button -->
+                        {% if person.pk %}    <a href="{% url 'update_personal_info' person.pk %}">
+                            <button class="Ubtn">Update</button>
+                        
+                        </a>
+                  </td>
+                  <td>    <!-- Delete Button -->
+                        <a href="{% url 'delete_personal_info' person.pk %}">
+                            <button class="Dbtn" id="Db">Delete</button> 
+                        </a> 
+                        {% endif %}
+                    </td> 
+                   
+                 
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+      
+    </div>
+</body>
+</html>
+   

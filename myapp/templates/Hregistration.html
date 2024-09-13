@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Registration</title>
+    <link rel="stylesheet" href="{% static 'css/Hregistratiion.css' %}">
+</head>
+<body>
+    
+    {% include 'Nav.html' %}
+    <div class="Hregister">
+        <div class="card">
+            <div class="left">
+                <h1></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
+                </p>
+                <span></span>
+                <a href="/#">
+                </a>
+            </div>
+            <div class="right">
+                <h1>House Registrations</h1>
+
+                <div class="form-container">
+                  
+                    <form method="post" id="HouseCardForm" enctype="multipart/form-data">
+                        {% csrf_token %}
+    
+                        <label for="PI_ID" > <p class="pp">Personal Information</p> </label>
+                        <select name="PI_ID" id="PI_ID" class="form-control mb-2" required>
+                            {% for info in p_info_list %}
+                                <option value="{{ info.PI_ID }}">{{ info.F_Name }} {{ info.M_Name }} {{ info.L_Name }}</option>
+                            {% endfor %}
+                        </select>
+                    <div>
+                    
+                        <input type="text" placeholder="Woreda" name="Woreda" class="form-control mb-2" required>
+                        <input type="text" placeholder="Region" name="Region" class="form-control mb-2" required>
+                        <input type="text" placeholder="House type" name="House_type" class="form-control mb-2" required>
+                        <input type="text" placeholder="Family Size" name="Family_size" class="form-control mb-2" required>
+                        <input type="text" placeholder="Family names" name="Family_names" class="form-control mb-2" required>
+                    </div>
+
+                    {% include 'popUp.html' %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

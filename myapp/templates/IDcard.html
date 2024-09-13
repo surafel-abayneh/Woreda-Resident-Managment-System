@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Registration</title>
+    <link rel="stylesheet" href="{% static 'css/IDcard.css' %}">
+</head>
+<body>
+   
+    {% include 'Nav.html' %}
+    
+    <div class="Iregister">
+        <div class="card">
+            <div class="left">          
+                <h1></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
+                </p>
+                <span></span>
+            </div>
+            <div class="right">
+                <h1>ID-REGISTER</h1>
+
+                <div class="form-container">
+                  
+                <form method="post" id="idCardForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label for=" House_No">House Information</label>
+                    <select name=" House_No" id=" House_No" class="form-control mb-2" required>
+                        {% for info in h_info_list %}
+                            <option value="{{ info.House_No }}">{{ info.House_No }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    <div> 
+                        
+                        <input type="text" placeholder="Emergency Contact name" name="Emergency_cont_name" class="form-control mb-2" required>
+                        <input type="number" placeholder="Emergency Phone number" name="Emergency_cont_number" class="form-control mb-2" required>
+                        <label for="Blood_Type">BLOOD TYPE</label>
+                          
+                        <select id="Blood_Type" name="Blood_Type" class="form-control">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="B+">B+</option>
+                            <option value="AB">AB</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                        <label><h5>Given Date</h5></label>
+                        <input type="date" placeholder="Given date" name="Given_date" class="form-control mb-2" required>
+                        <label><h5>Expire Date</h5></label>
+                        <input type="date" placeholder="Expire date" name="Expire_date" class="form-control mb-2" required>
+                    </div>
+                    {% include 'popUp.html' %}
+                    <div id="error" class="text-danger"></div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    
+    <style>
+       
+        .popup-message {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            
+            color: white;
+            padding: 15px;
+            border-radius: 15px;
+            background-color:rgb(10, 100, 122);
+            box-shadow: 0 20px 20px rgb(22 33 39 / 80%);
+            z-index: 1000;
+        }
+
+        .popup-message.error {
+            background-color: #f44336;
+        }
+
+        .popup-message button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Your form and other content here -->
+
+        <!-- Pop-up message -->
+        <div id="popup-message" class="popup-message">
+            <span id="popup-text"></span>
+            <button onclick="closePopup()">✖</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle the pop-up message
+        function showPopup(message, type) {
+            const popup = document.getElementById('popup-message');
+            const popupText = document.getElementById('popup-text');
+            popupText.textContent = message;
+            popup.classList.add(type);
+            popup.style.display = 'block';
+
+            // Auto-hide the message after 15 seconds
+            setTimeout(() => {
+                popup.style.display = 'none';
+                popup.classList.remove(type);
+            }, 10000);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup-message');
+            popup.style.display = 'none';
+        }
+
+        // Display messages from the backend
+        {% if messages %}
+            {% for message in messages %}
+                showPopup("{{ message }}", "{{ message.tags }}");
+            {% endfor %}
+        {% endif %}
+    </script>
+</body>
+</html>

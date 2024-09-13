@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ID Info List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/btn.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('tr[data-href]').on("click", function() {
+            window.location.href = $(this).attr('data-href');
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>ID Information</h1>
+        <table>
+            <thead>
+                <tr>
+                   
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Sex</th>
+                    <th>Date of Birth</th>
+                    <th>Place of Birth</th>
+                    <th>Nationality</th>
+                    <th>Phone Number</th>
+                    <th>Date of Registration</th>
+                    <th>Photograph</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for person in id_info %}
+                <tr data-href="{% if person.house_info.pk %}{% url 'Id_info_detail' person.house_info.pk %}{% else %}#{% endif %}">
+                  
+                    <td>{{ person.F_Name }}</td>
+                    <td>{{ person.M_Name }}</td>
+                    <td>{{ person.L_Name }}</td>
+                    <td>{{ person.sex }}</td>
+                    <td>{{ person.Dob }}</td>
+                    <td>{{ person.Place_of_birth }}</td>
+                    <td>{{ person.Nationality }}</td>
+                    <td>{{ person.Phone_number }}</td>
+                    <td>{{ person.Date_of_registration }}</td>
+                    <td>
+                        {% if person.photograph %}
+                        <img src="{{ person.photograph.url }}" alt="photograph">
+                        {% else %}
+                        No Photo
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

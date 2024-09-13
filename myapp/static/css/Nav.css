@@ -1,0 +1,184 @@
+.navbar-fixed-top ul li a:hover,
+ul li a:active{
+  background: rgb(252, 247, 247);
+  color: #FF6700;
+  border-radius: 6px;
+  opacity: 2;
+}
+.navbar-fixed-top ul li a
+{
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  font-family:Montserrat;
+}
+#logo svg{
+    font-size: 25px;
+  }
+#header {
+    position:relative;
+    left:0;
+    right:0;
+    top:0;
+    z-index:99;
+    border-bottom:1px solid rgba(235, 235, 235, 0.25);
+    background-color:#FFF;
+    -webkit-transition:0.2s all;
+    transition:0.2s all;
+}
+#header.transparent-nav {
+    position:absolute;
+    background-color: transparent;
+}
+
+#header.transparent-nav .main-menu li a {
+    color:#fffefe;
+    
+}
+#header.transparent-nav .main-menu .sub__menus__arrows li a {
+  color:#ff5100e5;
+  
+}
+
+.main-nav li a {
+    text-transform:uppercase;
+    -webkit-transition:0.2s all;
+    transition:0.2s all;
+    text-decoration: none !important;
+    font-family: Montserrat;
+}
+
+.main-menu li a:hover , .main-menu li a:focus {
+    
+  background-color:  #dfc7c7;
+  opacity: 1;
+  border-radius:2rem;
+  box-shadow:inset;
+    
+}
+
+.main-menu li a:after {
+    content:"";
+    display:block;
+    height:2px;
+    background-color:transparent;
+    width:100%;
+    opacity:0.8;
+}
+
+.main-menu li a:hover:after {
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity:1;
+    
+}
+
+.navbar-fixed-top{
+  position:fixed;
+  
+}
+
+
+#nav {
+  background: linear-gradient(rgba(56, 54, 54, 0.993),rgba(20, 1, 1, 0.993));
+  display:flex;  
+  backdrop-filter: blur(10px) !important;
+  opacity: 0.8;
+  border-radius: 38px 32px 0px 32px;
+  height: 10%;
+  width: 0%;
+  box-shadow: 0 20px 20px rgb(22 33 39 / 50%);
+}
+
+#logo{
+  background:rgb(223, 185, 185);
+  padding: 5px 8px 3.5px 10px;
+  position:fixed;
+  border-radius: 0px 0px 45px 2px;
+  display: flex;
+  text-transform:uppercase;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+
+#nav2 {
+  display:flex;
+  align-items:center;
+  padding: 0px 0px 0px 760px;
+  opacity: 1px;
+} 
+
+#nav2 li {
+  justify-content: space-between;
+  align-items:center;
+  padding: 0 16px;
+  position: relative;
+  list-style: none;
+}
+.navbar-toggle {
+    position:fixed;
+    right:0;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    z-index:99;
+}
+
+.navbar-toggle > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50% , -50%);
+        -ms-transform: translate(-50% , -50%);
+            transform: translate(-50% , -50%);
+    -webkit-transition: 0.2s background;
+    transition: 0.2s background;
+}
+
+.navbar-toggle > span:before, .navbar-toggle > span:after {
+    content: '';
+    position:absolute;
+    left:0;
+    -webkit-transition: 0.2s -webkit-transform;
+    transition: 0.2s -webkit-transform;
+    transition: 0.2s transform;
+    transition: 0.2s transform, 0.2s -webkit-transform;
+}
+
+.navbar-toggle > span , .navbar-toggle > span:before , .navbar-toggle > span:after {
+    height: 2px;
+    width: 25px;
+    background-color:#374050;
+}
+
+.navbar-toggle > span:before {
+    top: -10px;
+}
+
+.navbar-toggle > span:after {
+    top: 10px;
+}
+
+#header.nav-collapse .navbar-toggle > span {
+    background: transparent;
+}
+
+#header.nav-collapse .navbar-toggle > span:before {
+    -webkit-transform: translateY(10px) rotate(45deg);
+        -ms-transform: translateY(10px) rotate(45deg);
+            transform: translateY(10px) rotate(45deg);
+}
+
+#header.nav-collapse .navbar-toggle > span:after {
+    -webkit-transform: translateY(-10px) rotate(-45deg);
+        -ms-transform: translateY(-10px) rotate(-45deg);
+            transform: translateY(-10px) rotate(-45deg);
+}
+#logoh p{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    line-height: 20px;
+  }
+  

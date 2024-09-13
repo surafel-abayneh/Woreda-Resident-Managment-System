@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="./css/PInformation.css">
+    
+</head>
+
+<body>
+    <div id="header" class="transparent-nav">
+        <div class="container">
+            <nav id="nav" class="navbar navbar-fixed-top">
+                <ul id="logoh" class="list-inline">
+                    <li class="list-inline-item">
+                        <img src="../P/IMG/Addis_Ababa_City_Administration_emblem.png" alt="Emblem" width="60" height="60">
+                    </li>
+                    <li class="list-inline-item">
+                        <p>Woreda 11</p>
+                    </li>
+                </ul>
+                <ul id="nav2" class="list-inline float-right">
+                    <li class="list-inline-item">
+                        <!-- -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="Pregister">
+        <div class="card">
+            <div class="left">
+                <h1></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
+                </p>
+                <span></span>
+            </div>
+            <div class="right">
+                <h1>Personal Information</h1>
+                <form id="personalInfoForm">
+                    <div>
+                        <input type="number" placeholder="PI_Id" name="PI_ID" class="form-control mb-2" required>
+                        <input type="text" placeholder="FirstName" name="first_name" class="form-control mb-2" required>
+                        <input type="text" placeholder="MiddleName" name="middle_name" class="form-control mb-2" required>
+                        <input type="text" placeholder="LastName" name="last_name" class="form-control mb-2" required>
+                        <input type="text" placeholder="Sex" name="sex" class="form-control mb-2" required>
+                        <label for="sex">Sex:</label>
+                        <select id="sex" name="sex" class="form-control">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                        <label><h5>Date Of Birth</h5></label>
+                        <input type="date" placeholder="Date_Of_Birth" name="dob" class="form-control mb-2" required>
+                        <input type="text" placeholder="Place OF Birth" name="place_of_birth" class="form-control mb-2" required>
+                        <label><h5>Date Of Registration</h5></label>
+                        <input type="date" placeholder="Date Of Registration" name="Date_Of_Registration" class="form-control mb-2" required>
+                        <input type="text" placeholder="Nationality" name="nationality" class="form-control mb-2" required>
+                        <input type="number" placeholder="Phone_number" name="phone_number" class="form-control mb-2" required>
+                        <label for="photograph">Upload Photograph:</label>
+                        <input type="file" id="photograph" name="photograph" class="form-control-file">
+
+                    </div>
+                    <div id="error" class="text-danger"></div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

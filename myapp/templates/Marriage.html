@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Registration</title>
+    <link rel="stylesheet" href="{% static 'css/Marriage.css' %}">
+</head>
+<body>
+
+<div>
+    {% include 'Nav.html' %}
+    <div class="Mregister">
+        <div class="card">
+            <div class="left">
+                <h1></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,</p>
+                <span></span>
+                <a href="/login">
+                    <button>Login</button>
+                </a>
+            </div>
+            <div class="right">
+                <h1>MARRIAGE</h1>
+                <form method="post" id="HouseCardForm" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="H_ID_No"> <p class="pp">Husband Name</p> </label>
+                    <select name="PI_ID" id="PI_ID" class="form-control mb-2" required>
+                        {% for info in I1_info_list %}
+                            <option value="{{ info.PI_ID }}">{{ info.F_Name }} {{ info.M_Name }} {{ info.L_Name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="W_ID_No"> <p class="pp">Wife Name</p> </label>
+                    <select name="PI_ID" id="PI_ID" class="form-control mb-2" required>
+                        {% for info in I2_info_list %}
+                            <option value="{{ info.PI_ID }}">{{ info.F_Name }} {{ info.M_Name }} {{ info.L_Name }}</option>
+                        {% endfor %}
+                    </select>
+                    <div>
+                        <label><h5>Given Date</h5></label>
+                        <input type="date" placeholder="Given date" name="Given_date" class="form-control mb-2" required><br>
+                        <input type="text" placeholder="Marriage type" name="Marriage_type" class="form-control mb-2" required>
+                        <input type="text" placeholder="Witness 1" name="witness_1" class="form-control mb-2" required>
+                        <input type="text" placeholder="Witness 2" name="witness_2" class="form-control mb-2" required>
+                        <input type="text" placeholder="Witness 1 sign" name="Witness_1_sign" class="form-control mb-2">
+                        <input type="text" placeholder="Witness 2 sign" name="Witness_2_sign" class="form-control mb-2">
+                    </div>
+                    {% include 'popUp.html' %}
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Personal Info</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Delete Personal Info</h1>
+        <p>Are you sure you want to delete {{ personal_info.F_Name }} {{ personal_info.L_Name }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn-danger">Delete</button>
+        </form>
+    </div>
+</body>
+</html>

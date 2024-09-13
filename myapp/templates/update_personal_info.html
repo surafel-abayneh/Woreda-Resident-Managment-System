@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Personal Info</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    {% if success_message %}
+    <div class="alert alert-success">
+        {{ success_message }}
+    </div>
+    {% endif %}
+    <div class="form-container">
+        <h1>Update Personal Info</h1>
+        <form method="post">
+            {% csrf_token %}
+           
+        
+          
+                    
+                        <input type="text" placeholder="PI_ID" name="PI_ID" class="form-control mb-2" value="{{ personal_info.PI_ID }}">
+                        <input type="text" placeholder="FirstName" name="F_Name" class="form-control mb-2" value="{{ personal_info.F_Name }}">
+                        <input type="text" placeholder="MiddleName" name="M_Name" class="form-control mb-2" value="{{ personal_info.M_Name }}">
+                        <input type="text" placeholder="LastName" name="L_Name" class="form-control mb-2" value="{{ personal_info.L_Name }}"><br/>
+                        <label for="sex">Sex:</label>
+                        <select id="sex" name="sex" class="form-control" value="{{ personal_info.sex }}">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                        <label><h5>Date Of Birth</h5></label>
+                        <input type="date" placeholder="Date_Of_Birth" name="Dob" class="form-control mb-2" value="{{ personal_info.Dob }}">
+                        <input type="text" placeholder="Place OF Birth" name="Place_of_birth" class="form-control mb-2" value="{{ personal_info.Place_of_birth }}">
+                        
+                        <input type="text" placeholder="Nationality" name="Nationality" class="form-control mb-2" value="{{ personal_info.Nationality }}">
+                        
+    
+                        <input type="number" placeholder="Phone_number" name="Phone_number" class="form-control mb-2" value="{{ personal_info.Phone_number }}">
+                        <label for="photograph">Upload Photograph:</label>
+                        <input type="file" id="photograph" name="photograph" class="form-control-file"value="{{ personal_info.photograph }}"> 
+                         <label><h5>Date Of Registration</h5></label>
+                        <input type="date" placeholder="Date Of Registration" name="Date_of_registration" class="form-control mb-2" value="{{ personal_info.Date_of_registration }}">
+                    
+            <button type="submit" class="btn btn-success">Update</button>
+            <a href="{% url 'personal_info_list' %}" class="btn btn-cancel">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

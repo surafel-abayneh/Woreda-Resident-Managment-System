@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/Login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <div class="card">
+            <div class="left">
+                <h1>Hello.</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
+                    alias totam numquam ipsa exercitationem dignissimos, error nam,
+                    consequatur.
+                </p>
+                <span>Don't have an account?</span>
+                <a href="/register">
+                    <button>Register</button>
+                </a>
+            </div>
+            <div class="right">
+                <h1>Login</h1>
+                <form id="loginForm">
+                    <input
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                    />
+                    <div id="error"></div>
+                    <button type="button" onclick="handleLogin()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

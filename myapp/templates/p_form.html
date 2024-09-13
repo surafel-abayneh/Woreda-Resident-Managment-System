@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Info</title>
+    <link rel="stylesheet" href="{% static '../static/css/PInformation.css' %}">
+    
+</head>
+
+<body>
+       
+    {% include 'Nav.html' %}
+
+    <div class="Pregister">
+        <div class="card">
+            <div class="left">
+                <h1></h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
+                </p>
+                <span></span>
+            </div>
+            <div class="right">
+                <h1>Personal Information</h1>
+
+                <div class="form-container">
+                    {% if messages %}
+                        {% for message in message %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}        
+                    {% endif %}
+                
+                  <form method="post" id="personalInfoForm"enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                    <div>
+                        
+                        <input type="text" placeholder="First Name" name="F_Name" class="form-control mb-2" required>
+                        <input type="text" placeholder="Middle Name" name="M_Name" class="form-control mb-2" required>
+                        <input type="text" placeholder="Last Name" name="L_Name" class="form-control mb-2" required>
+                        <input type="text" placeholder="Mother Name" name="Mother_Name" class="form-control mb-2" required><br/>
+                        <label for="sex">Sex:</label>
+                        <select id="sex" name="sex" class="form-control">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                        <label><h5>Date Of Birth</h5></label>
+                        <input type="date" placeholder="Date Of Birth" name="Dob" class="form-control mb-2" required>
+                        <input type="text" placeholder="Place OF Birth" name="Place_of_birth" class="form-control mb-2" required>
+                        
+                        <input type="text" placeholder="Nationality" name="Nationality" class="form-control mb-2" required>
+                        
+    
+                        <input type="number" placeholder="Phone number" name="Phone_number" class="form-control mb-2" required><br/>
+                        <label for="photograph"><h5>Upload Photograph:</h5></label>
+                        <input type="file" id="photograph" name="photograph" class="form-control-file">
+                         <label><h5>Date Of Registration</h5></label>
+                        <input type="date" placeholder="Date Of Registration" name="Date_of_registration" class="form-control mb-2" required>
+                    </div>
+                    {% include 'popUp.html' %}
+                    <div id="error" class="text-danger"></div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

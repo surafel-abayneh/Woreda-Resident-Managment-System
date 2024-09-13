@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Certificate Registration</title>
+    <link rel="stylesheet" href="{% static 'css/BirthCertificate.css' %}">>
+</head>
+<body>
+
+<div>
+    <div id="header" class="transparent-nav">
+        <div class="container">
+            <nav id="nav" class="navbar-fixed-top">
+                <ul id="logoh">
+                    <li>
+                        <img src="./IMG/Addis_Ababa_City_Administration_emblem.png" alt="Addis Ababa City Administration Emblem" width="60" height="60">
+                    </li>
+                    <li>
+                        <p>Woreda 11</p>
+                    </li>
+                </ul>
+                <ul id="nav2">
+                    <li>
+                        <!-- Navbarmenu equivalent -->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="Bregister">
+        <div class="card">
+            <div class="row">
+                <div class="left">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,</p>
+                    <span></span>
+                    <a href="/login">
+                        <button>Login</button>
+                    </a>
+                </div>
+                <div class="right">
+                    <h1>BIRTH CERTIFICATE</h1>
+                    <form>
+                        <div>
+                            <input type="text" placeholder="Certificate_id"> 
+                            <input type="text" placeholder="PI_id">
+                            <input type="text" placeholder="Father_id">
+                            <input type="email" placeholder="Mother_id">
+                            <label><h5>Given Date</h5></label>
+                            <input type="date" placeholder="Given_date"><br>
+                            <input type="text" placeholder="House No">
+                            <input type="text" placeholder="User_id">
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+
+</body>
+</html>
